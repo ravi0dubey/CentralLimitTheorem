@@ -1,3 +1,4 @@
+import numpy
 import numpy.random as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -27,10 +28,7 @@ sample_means=[]
 for i in range(0,number_of_samples):
     sample_means.append(0) #Keep on initializing sample means with 0 before it gets filled with actual sample means
     c = np.randint(1,population_size,sample_size) #Create array from Population data for sample size entered
-    print(c)
-    print(population[c])
-    sample_means[i] = population[c].mean() #Store means of sample picked from
-
+    sample_means[i] = numpy.mean(c)  # Store means of sample picked from
 
 #Plot Histogram  of Sample Means
 plt.subplot(1,2,1)
